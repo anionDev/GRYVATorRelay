@@ -1,0 +1,6 @@
+Nickname __.torrc.nickname.__
+ORPort __.torrc.orport.__
+ExitRelay __.torrc.exitrelay.__
+SocksPort __.torrc.socksport.__
+ControlSocket __.torrc.controlsocket.__
+ContactInfo __.torrc.contactinfo.__

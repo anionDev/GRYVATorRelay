@@ -3,16 +3,16 @@ version: '3.2'
 services:
 
   GRYVATorRelay:
-    image: 'GRYVATorRelay:latest'
+    image: 'gryvatorrelay:latest'
     container_name: 'torrelay'
-      ports:
+    ports:
         - 9001:9001
     environment:
       - nickname=myNiceRelay
-      - orport 9001
-      - exitrelay 0
-      - socksport 0
-      - controlsocket 0
-      - contactinfo tor-operator@example.org
+      - orport=9001
+      - exitrelay=0
+      - socksport=0
+      - controlsocket=0
+      - contactinfo=tor-operator@example.org
 
 # TODO after running this container, take a look at the tasks listed here: https://community.torproject.org/relay/setup/post-install/
