@@ -4,3 +4,6 @@ ExitRelay __.torrc.exitrelay.__
 SocksPort __.torrc.socksport.__
 ControlSocket __.torrc.controlsocket.__
 ContactInfo __.torrc.contactinfo.__
+__.torrc.lognotice.__
+__.torrc.logdebug.__
+

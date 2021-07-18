@@ -5,8 +5,10 @@ services:
   GRYVATorRelay:
     image: 'gryvatorrelay:latest'
     container_name: 'torrelay'
+    volumes:
+      - ./Logs:/var/log/tor
     ports:
-        - 9001:9001
+      - 9001:9001
     environment:
       - nickname=myNiceRelay
       - orport=9001
@@ -14,5 +16,7 @@ services:
       - socksport=0
       - controlsocket=0
       - contactinfo=tor-operator@example.org
+      - lognotice=true
+      - logdebug=false
 
 # TODO after running this container, take a look at the tasks listed here: https://community.torproject.org/relay/setup/post-install/
