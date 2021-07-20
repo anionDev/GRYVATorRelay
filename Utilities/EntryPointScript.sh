@@ -17,5 +17,4 @@ else
   sed -i -e "s/__.torrc.logdebug.__//g" /torrc
 fi
 
-cat /torrc
 tor -f /torrc
