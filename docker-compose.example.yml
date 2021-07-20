@@ -18,5 +18,3 @@ services:
       - contactinfo=tor-operator@example.org
       - lognotice=true
       - logdebug=false
-
-# TODO after running this container, take a look at the tasks listed here: https://community.torproject.org/relay/setup/post-install/
