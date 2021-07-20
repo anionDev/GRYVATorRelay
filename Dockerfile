@@ -13,5 +13,7 @@ RUN /Workspace/ScriptCollection/Other/ServerMaintenance/Anonymous/TorInstall.sh
 
 COPY Utilities/EntryPointScript.sh /EntryPointScript.sh
 COPY Utilities/torrc.template /torrc
+
 RUN chmod +x /EntryPointScript.sh
+
 ENTRYPOINT ["/EntryPointScript.sh"]
