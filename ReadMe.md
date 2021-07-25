@@ -8,7 +8,11 @@ GRYVATorRelay is a docker-image for simply running a tor-relay in a docker-conta
 
 ### Volumes
 
-Using volumes is not required. There is an optional volume for the logs of tor.
+Using volumes is not required. There are 2 optional volumes:
+
+ - `/userhome/.tor`
+ - `/var/log/tor`
+
 The path in the container for this log-folder is `/var/log/tor`.
 
 ### Environment-variables
