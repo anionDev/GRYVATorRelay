@@ -13,13 +13,17 @@ RUN chmod -R +x ./ScriptCollection/Other
 RUN ./ScriptCollection/Other/ServerMaintenance/Anonymous/TorInstall.sh
 
 RUN ./ScriptCollection/Other/ServerMaintenance/Common/CreateUser.sh "user" "/userhome" "false" "" "false" "false"
-COPY Utilities/EntryPointScript.sh /EntryPointScript.sh
-COPY Utilities/torrc.template /torrc
-RUN chmod +x /EntryPointScript.sh
+
+COPY Utilities/torrc.template /userhome/torrc
+
+COPY Utilities/EntryPointScript.sh /userhome/EntryPointScript.sh
+RUN chmod +x /userhome/EntryPointScript.sh
+
+RUN chown -R user:user /userhome
 
 RUN ./ScriptCollection/Other/ServerMaintenance/Common/ConfigureSystem.sh "$EnvironmentStage" "/Workspace/ScriptCollection" "" "/Workspace"
 
 USER user
 WORKDIR /userhome
 
-ENTRYPOINT ["/EntryPointScript.sh"]
+ENTRYPOINT ["/userhome/EntryPointScript.sh"]
