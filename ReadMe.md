@@ -39,7 +39,7 @@ See `docker-compose.example.yml` for an example how to use it.
 The image can be built using the following command:
 
 ``` sh
-docker image build --progress plain --no-cache --tag gryvatorrelay:latest .
+docker image build --no-cache --pull --force-rm --progress plain --tag gryvatorrelay:latest .
 ```
 
 ## Test
