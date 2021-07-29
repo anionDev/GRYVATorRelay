@@ -17,4 +17,12 @@ else
   sed -i -e "s/__.torrc.logdebug.__//g" ./torrc
 fi
 
+sed -i '/^$/d' ./torrc # Remove empty lines
+sed -i '' -e '$a\' ./torrc # Append empty line
+
+echo "--------------------"
+echo "Tor-Configuration:"
+cat ./torrc
+echo "--------------------"
+
 tor -f ./torrc

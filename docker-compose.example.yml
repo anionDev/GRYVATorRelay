@@ -2,12 +2,12 @@ version: '3.2'
 
 services:
 
-  GRYVATorRelay:
-    image: 'gryvatorrelay:latest'
-    container_name: 'torrelay'
+  gryvatorrelay:
+    build: .
+    container_name: 'gryvatorrelay'
     volumes:
-      - ./Configuration/.tor:/userhome/.tor
-      - ./Logs:/var/log/tor
+      - ./Test/Configuration/.tor:/userhome/.tor
+      - ./Test/Logs:/var/log/tor
     ports:
       - 9001:9001
     environment:
