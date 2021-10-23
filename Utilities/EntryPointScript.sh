@@ -24,5 +24,6 @@ echo "--------------------"
 echo "Tor-Configuration:"
 cat ./torrc
 echo "--------------------"
-
+tor --version
+echo "--------------------"
 tor -f ./torrc
