@@ -3,7 +3,7 @@ version: '3.2'
 services:
 
   gryvatorrelay:
-    build: .
+    image: gryvatorrelay:latest
     container_name: 'gryvatorrelay'
     volumes:
       - ./Test/Configuration/.tor:/userhome/.tor
