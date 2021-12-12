@@ -4,5 +4,22 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Build image",
+				"command": "docker",
+				"args": ["image", "build", "--no-cache", "--pull", "--force-rm", "--progress", "plain", "--build-arg", "EnvironmentStage=Development", "--tag", "gryvatorrelay:latest", "."],
+				"type": "shell"
+			},
+			{
+				"label": "Test image",
+				"command": "docker-compose",
+				"args": ["-f", "docker-compose.example.yml", "-p", "GRYVATorRelay", "up", "--remove-orphans", "--force-recreate"],
+				"type": "shell"
+			}
+		]
+	},
+	"settings": {},
 }
