@@ -33,23 +33,43 @@ All of these environment-variables are required.
 
 ### Example
 
-See `docker-compose.example.yml` for an example how to use it.
+See `docker-compose.example.yml` for an example how to use this image.
 
-## Build
+### Build image
 
 The image can be built using the following command:
+
+``` sh
+docker image build --force-rm --progress plain --build-arg EnvironmentStage=Development --tag gryvatorrelay:latest .
+```
+
+The image can also be built using the following command which uses no cache:
 
 ``` sh
 docker image build --no-cache --pull --force-rm --progress plain --build-arg EnvironmentStage=Development --tag gryvatorrelay:latest .
 ```
 
-## Test
+The environment-stage can have the one of the following values:
+
+- `Development`
+- `QualityManagement`
+- `Productive`
+
+### Test image
 
 The built image can be tested using the following command:
 
 ``` sh
-docker-compose -f docker-compose.example.yml -p gryvatorrelay up
+docker-compose -f docker-compose.example.yml -p GRYVATorRelay up --remove-orphans --force-recreate
 ```
+
+After executing this command the first time your container may terminate and you may see an `eula.txt`-file in the `./Volumes/Configuration`-folder. You have to edit this file accordingly to indicate that you accept the end-user license agreement and execute the command again to run the application. Now the container will remain running and uses your world-data stored in `./Volumes/Data` or creates a new world in this folder if the folder is empty.
+
+## Development
+
+### Branching-system
+
+This repository applies the [GitFlowSimplified](https://projects.aniondev.de/CommonUtilities/Templates/ProjectTemplates/-/blob/main/Templates/Conventions/BranchingSystem/GitFlowSimplified.md)-branching-system.
 
 ## Additional stuff
 

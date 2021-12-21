@@ -23,9 +23,11 @@ sed -i '/^$/d' ./torrc # Remove empty lines
 sed -i '' -e '$a\' ./torrc # Append empty line
 
 echo "--------------------"
+echo "Tor-version:"
+tor --version
+echo "--------------------"
 echo "Tor-Configuration:"
 cat ./torrc
 echo "--------------------"
-tor --version
-echo "--------------------"
+echo "Starting tor"
 tor -f ./torrc
