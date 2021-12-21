@@ -16,6 +16,7 @@ services:
       - exitrelay=0
       - socksport=0
       - controlsocket=0
-      - contactinfo=tor-operator@example.org
+      - contactinfo=tor-relay-maintainer@example.org
       - lognotice=true
       - logdebug=false
+      - relaybandwidthrate=2000 KBytes

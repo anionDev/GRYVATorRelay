@@ -27,6 +27,7 @@ The following environment-variables are available:
 - `contactinfo`
 - `lognotice`
 - `logdebug`
+- `relaybandwidthrate`
 
 All of these environment-variables are required.
 

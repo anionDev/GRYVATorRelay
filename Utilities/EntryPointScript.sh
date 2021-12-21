@@ -6,6 +6,8 @@ sed -i -e "s/__.torrc.exitrelay.__/$exitrelay/g" ./torrc
 sed -i -e "s/__.torrc.socksport.__/$socksport/g" ./torrc
 sed -i -e "s/__.torrc.controlsocket.__/$controlsocket/g" ./torrc
 sed -i -e "s/__.torrc.contactinfo.__/$contactinfo/g" ./torrc
+sed -i -e "s/__.torrc.relaybandwidthrate.__/$relaybandwidthrate/g" ./torrc
+
 if [[ "${lognotice}" = true ]]; then
   sed -i -e "s/__.torrc.lognotice.__/Log notice file \/var\/log\/tor\/notices.log/g" ./torrc
 else
