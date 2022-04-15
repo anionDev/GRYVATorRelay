@@ -8,7 +8,13 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "Build image",
+				"label": "Build image (cache)",
+				"command": "docker",
+				"args": ["image", "build", "--force-rm", "--progress", "plain", "--build-arg", "EnvironmentStage=Development", "--tag", "gryvatorrelay:latest", "."],
+				"type": "shell"
+			},
+			{
+				"label": "Build image (no cache)",
 				"command": "docker",
 				"args": ["image", "build", "--no-cache", "--pull", "--force-rm", "--progress", "plain", "--build-arg", "EnvironmentStage=Development", "--tag", "gryvatorrelay:latest", "."],
 				"type": "shell"
@@ -21,5 +27,5 @@
 			}
 		]
 	},
-	"settings": {},
+	"settings": {}
 }
