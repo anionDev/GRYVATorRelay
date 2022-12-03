@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 ARG TargetEnvironmentType
-ARG Version=2.1.0
+ARG Version="0.1.9"
 
 RUN mkdir /Workspace
 WORKDIR /Workspace
