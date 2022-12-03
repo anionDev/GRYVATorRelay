@@ -37,16 +37,6 @@ All of these environment-variables are required.
 
 See [`docker-compose.example.yml`](https://projects.aniondev.de/PublicProjects/GRYVAImages/GRYVATorRelay/-/blob/main/GRYVATorRelay/Other/Reference/ReferenceContent/Examples/docker-compose.example.yml) for an example how to use this image.
 
-## Development
-
-### Branching-system
-
-This repository applies the [GitFlowSimplified](https://projects.aniondev.de/PublicProjects/Common/ProjectTemplates/-/blob/main/Conventions/BranchingSystem/GitFlowSimplified/GitFlowSimplified.md)-branching-system.
-
-### Repository-structure
-
-This repository applies the [CommonProjectStructure](https://projects.aniondev.de/PublicProjects/Common/ProjectTemplates/-/blob/main/Conventions/RepositoryStructure/CommonProjectStructure/CommonProjectStructure.md)-repository-structure.
-
 ## Additional stuff
 
 After running this container, take a look at the tasks listed at [community.torproject.org/relay/setup/post-install](https://community.torproject.org/relay/setup/post-install).
