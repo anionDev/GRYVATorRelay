@@ -2,6 +2,7 @@ FROM debian:stable-slim
 
 ARG TargetEnvironmentType
 ARG Version="0.1.10"
+LABEL maintainer "marius.goecke@gmail.com"
 
 RUN mkdir /Workspace
 WORKDIR /Workspace
