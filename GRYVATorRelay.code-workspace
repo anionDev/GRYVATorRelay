@@ -3,7 +3,11 @@
 		{
 			"path": "./GRYVATorRelay",
 			"name": "GRYVATorRelay"
-		}
+		},
+		{
+			"path": ".",
+			"name": "Entire repository"
+		},
 	],
 	"tasks": {
 		"version": "2.0.0",
