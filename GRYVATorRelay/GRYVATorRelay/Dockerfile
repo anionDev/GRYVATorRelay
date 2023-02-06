@@ -23,9 +23,9 @@ RUN mkdir /Workspace \
 
 WORKDIR /Workspace
 
-COPY ./GRYVAPaperServer/torrc.template /Workspace/Application/torrc
+COPY ./GRYVATorRelay/torrc.template /Workspace/Application/torrc
 
-COPY ./GRYVAPaperServer/EntryPointScript.sh /Workspace/Application/EntryPointScript.sh
+COPY ./GRYVATorRelay/EntryPointScript.sh /Workspace/Application/EntryPointScript.sh
 
 RUN chown -R user:1000 /Workspace \
     && chmod -R 700 /Workspace
