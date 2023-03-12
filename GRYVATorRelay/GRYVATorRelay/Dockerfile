@@ -24,7 +24,7 @@ WORKDIR /Workspace
 
 COPY ./GRYVAPaperServer/torrc.template /Workspace/Application/torrc
 
-COPY ./GRYVAPaperServer/EntryPointScript.sh /Workspace/Application/EntryPointScript.sh
+COPY ./GRYVAPaperServer/EntryPoint.sh /Workspace/Application/EntryPoint.sh
 
 RUN chown -R user:1000 /Workspace \
     && chmod -R 700 /Workspace
@@ -32,4 +32,4 @@ RUN chown -R user:1000 /Workspace \
 USER user
 WORKDIR /Workspace/Configuration
 
-ENTRYPOINT ["/Workspace/Application/EntryPointScript.sh"]
+ENTRYPOINT ["/Workspace/Application/EntryPoint.sh"]
