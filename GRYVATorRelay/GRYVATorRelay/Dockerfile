@@ -1,8 +1,7 @@
 FROM debian:stable-slim
 
-
 ARG TargetEnvironmentType
-ARG Version="0.1.3"
+ARG Version="0.1.11"
 LABEL maintainer "marius.goecke@gmail.com"
 LABEL description="GRYVATorRelay is a docker-image for simply running a tor-relay in a docker-container."
 LABEL targetEnvironmentType="$TargetEnvironmentType"

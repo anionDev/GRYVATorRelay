@@ -7,10 +7,10 @@
           "**.md",
           "**.yml"
         ],
-        "src": "./ReferenceContent",
         "exclude": [
-          "Examples/**"
-        ]
+          "Examples/NewRepository/**"
+        ],
+        "src": "./ReferenceContent"
       }
     ],
     "resource": [
