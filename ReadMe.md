@@ -4,8 +4,8 @@
 
 ## General
 
-[GRYVATorRelay](https://projects.aniondev.de/PublicProjects/GRYVAImages/GRYVATorRelay) is a docker-image for simply running a tor-relay in a docker-container.
-The details can be found [here](https://projects.aniondev.de/PublicProjects/GRYVAImages/GRYVATorRelay/-/tree/main/GRYVATorRelay).
+[GRYVATorRelay](https://github.com/anionDev/GRYVATorRelay) is a docker-image for simply running a tor-relay in a docker-container.
+The details can be found [here](https://github.com/anionDev/GRYVATorRelay/blob/main/GRYVATorRelay/Other/Reference/ReferenceContent/index.md).
 
 ## Development
 
