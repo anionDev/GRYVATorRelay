@@ -8,7 +8,7 @@
           "**.yml"
         ],
         "exclude": [
-          "Examples/NewRepository/**"
+          "Examples/MinimalDockerComposeFile/**"
         ],
         "src": "./ReferenceContent"
       }
@@ -16,7 +16,7 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "Images/**"
         ],
         "src": "./ReferenceContent"
       }
