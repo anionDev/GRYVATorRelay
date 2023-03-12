@@ -14,6 +14,7 @@ RUN apt-get -y update \
     && mkdir /Workspace \
     && mkdir /Workspace/Application \
     && mkdir /Workspace/Data \
+    && mkdir /Workspace/Data/.tor \
     && useradd --base-dir /Workspace --home /Workspace/Data user \
     && echo "deb $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
     && echo "deb-src $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \

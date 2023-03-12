@@ -4,7 +4,7 @@
 
 [GRYVATorRelay](https://projects.aniondev.de/PublicProjects/GRYVAImages/GRYVATorRelay) is a docker-image for simply running a tor-relay in a docker-container.
 
-The latest-release contains Tor v0.4.7.11.
+The latest-release contains Tor v0.4.7.13.
 
 ## Usage
 

@@ -1,35 +1,34 @@
 #!/bin/bash
 
 configurationfile="/Workspace/Application/torrc"
-
-sed -i -e "s/__.torrc.nickname.__/$nickname/g" "$configurationFile"
-sed -i -e "s/__.torrc.orport.__/$orport/g" "$configurationFile"
-sed -i -e "s/__.torrc.exitrelay.__/$exitrelay/g" "$configurationFile"
-sed -i -e "s/__.torrc.socksport.__/$socksport/g" "$configurationFile"
-sed -i -e "s/__.torrc.controlsocket.__/$controlsocket/g" "$configurationFile"
-sed -i -e "s/__.torrc.contactinfo.__/$contactinfo/g" "$configurationFile"
-sed -i -e "s/__.torrc.relaybandwidthrate.__/$relaybandwidthrate/g" "$configurationFile"
+sed -i -e "s/__.torrc.nickname.__/$nickname/g" "$configurationfile"
+sed -i -e "s/__.torrc.orport.__/$orport/g" "$configurationfile"
+sed -i -e "s/__.torrc.exitrelay.__/$exitrelay/g" "$configurationfile"
+sed -i -e "s/__.torrc.socksport.__/$socksport/g" "$configurationfile"
+sed -i -e "s/__.torrc.controlsocket.__/$controlsocket/g" "$configurationfile"
+sed -i -e "s/__.torrc.contactinfo.__/$contactinfo/g" "$configurationfile"
+sed -i -e "s/__.torrc.relaybandwidthrate.__/$relaybandwidthrate/g" "$configurationfile"
 
 if [[ "${lognotice}" = true ]]; then
-  sed -i -e "s/__.torrc.lognotice.__/Log notice file \/var\/log\/tor\/notices.log/g" "$configurationFile"
+  sed -i -e "s/__.torrc.lognotice.__/Log notice file \/var\/log\/tor\/notices.log/g" "$configurationfile"
 else
-  sed -i -e "s/__.torrc.lognotice.__//g" "$configurationFile"
+  sed -i -e "s/__.torrc.lognotice.__//g" "$configurationfile"
 fi
 if [[ "${logdebug}" = true ]]; then
-  sed -i -e "s/__.torrc.logdebug.__/Log notice file \/var\/log\/tor\/debug.log/g" "$configurationFile"
+  sed -i -e "s/__.torrc.logdebug.__/Log notice file \/var\/log\/tor\/debug.log/g" "$configurationfile"
 else
-  sed -i -e "s/__.torrc.logdebug.__//g" "$configurationFile"
+  sed -i -e "s/__.torrc.logdebug.__//g" "$configurationfile"
 fi
 
-sed -i '/^$/d' "$configurationFile" # Remove empty lines
-sed -i '' -e '$a\' "$configurationFile" # Append empty line
+sed -i '/^$/d' "$configurationfile" # Remove empty lines
+sed -i '' -e '$a\' "$configurationfile" # Append empty line
 
 echo "--------------------"
 echo "Tor-version:"
 tor --version
 echo "--------------------"
 echo "Tor-Configuration:"
-cat "$configurationFile"
+cat "$configurationfile"
 echo "--------------------"
 echo "Starting tor..."
-tor -f "$configurationFile"
+tor -f "$configurationfile"

@@ -23,9 +23,12 @@
 			},
 			{
 				"label": "GRYVATorRelay: Run example",
-				"command": "python3 GRYVATorRelay/Other/Examples/MinimalDockerComposeFile/RunExample.py",
+				"command": "python GRYVATorRelay/Other/Reference/ReferenceContent/Examples/MinimalDockerComposeFile/RunExample.py",
 				"args": [],
 				"type": "shell",
+				"options": {
+					"cwd": "${workspaceFolder}",
+				},
 			}
 		]
 	},
