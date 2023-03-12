@@ -14,7 +14,6 @@ RUN apt-get -y update \
     && mkdir /Workspace \
     && mkdir /Workspace/Application \
     && mkdir /Workspace/Data \
-    && mkdir /Workspace/Data/.tor \
     && useradd --base-dir /Workspace --home /Workspace/Data user \
     && echo "deb $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
     && echo "deb-src $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
@@ -30,7 +29,7 @@ WORKDIR /Workspace/Data
 COPY ./GRYVATorRelay/torrc.template /Workspace/Application/torrc
 COPY ./GRYVATorRelay/EntryPoint.sh /Workspace/Application/EntryPoint.sh
 
-RUN chown -R user:1000 /Workspace \
+RUN chown -R user:user /Workspace \
     && chmod -R 700 /Workspace
 
 USER user
