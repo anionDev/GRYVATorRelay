@@ -6,7 +6,7 @@ services:
     image: gryvatorrelay:latest
     container_name: 'gryvatorrelay'
     volumes:
-      - "./Volumes/Configuration/.tor:/Workspace/userhome/.tor"
+      - "./Volumes/Configuration/.tor:/Workspace/Configuration"
       - "./Volumes/Logs:/var/log/tor"
     ports:
       - 9001:9001

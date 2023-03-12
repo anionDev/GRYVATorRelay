@@ -8,11 +8,10 @@ LABEL targetEnvironmentType="$TargetEnvironmentType"
 LABEL version="$Version"
 
 RUN mkdir /Workspace \
-    RUN mkdir /Workspace \
+    && mkdir /Workspace \
     && mkdir /Workspace/Application \
     && mkdir /Workspace/Configuration \
-    && mkdir /Workspace/Data \
-    && useradd --base-dir /Workspace --home /Workspace user \
+    && useradd --base-dir /Workspace --home /Workspace/Configuration user \
     && echo "deb http://deb.torproject.org/torproject.org $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
     && echo "deb-src https://deb.torproject.org/torproject.org $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
     && wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import \
@@ -22,9 +21,9 @@ RUN mkdir /Workspace \
 
 WORKDIR /Workspace
 
-COPY ./GRYVAPaperServer/torrc.template /Workspace/Application/torrc
+COPY ./GRYVATorRelay/torrc.template /Workspace/Application/torrc
 
-COPY ./GRYVAPaperServer/EntryPoint.sh /Workspace/Application/EntryPoint.sh
+COPY ./GRYVATorRelay/EntryPoint.sh /Workspace/Application/EntryPoint.sh
 
 RUN chown -R user:1000 /Workspace \
     && chmod -R 700 /Workspace
