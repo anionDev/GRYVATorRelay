@@ -21,11 +21,6 @@ else
   sed -i -e "s/__.torrc.logdebug.__//g" $configurationfile
 fi
 
-# Remove empty lines
-sed -i '/^$/d' $configurationfile
-# Append empty line
-sed -i '' -e '$a\' $configurationfile
-
 echo "--------------------"
 echo "Tor-version:"
 tor --version

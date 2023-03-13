@@ -5,6 +5,7 @@ SocksPort __.torrc.socksport.__
 ControlSocket __.torrc.controlsocket.__
 ContactInfo __.torrc.contactinfo.__
 RelayBandwidthRate __.torrc.relaybandwidthrate.__
+DataDirectory /Workspace/Data/.tor
 
 __.torrc.lognotice.__
 __.torrc.logdebug.__
