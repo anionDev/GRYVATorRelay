@@ -13,9 +13,7 @@ RUN apt-get -y update \
     && apt-get -y install wget gpg lsb-release \
     && mkdir /Workspace \
     && mkdir /Workspace/Application \
-    && mkdir /Workspace/Configuration \
     && mkdir /Workspace/Data \
-    && useradd --base-dir /Workspace --home /Workspace/Data user \
     && echo "deb $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
     && echo "deb-src $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
     && wget -qO- $TorURL/$TorKey.asc | gpg --import \
@@ -29,10 +27,5 @@ WORKDIR /Workspace/Data
 
 COPY ./GRYVATorRelay/torrc.template /Workspace/Application/torrc
 COPY ./GRYVATorRelay/EntryPoint.sh /Workspace/Application/EntryPoint.sh
-
-RUN chown -R user:user /Workspace \
-    && chmod -R 700 /Workspace
-
-USER user
 
 ENTRYPOINT ["/Workspace/Application/EntryPoint.sh"]
