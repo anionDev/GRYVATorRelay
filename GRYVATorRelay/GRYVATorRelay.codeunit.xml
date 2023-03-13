@@ -2,7 +2,7 @@
 <cps:codeunit xmlns:cps="https://projects.aniondev.de/PublicProjects/Common/ProjectTemplates/-/tree/main/Conventions/RepositoryStructure/CommonProjectStructure" codeunitspecificationversion="1.3.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://projects.aniondev.de/PublicProjects/Common/ProjectTemplates/-/raw/main/Conventions/RepositoryStructure/CommonProjectStructure/codeunit.xsd">
     <cps:name>GRYVATorRelay</cps:name>
-    <cps:version>0.1.12</cps:version>
+    <cps:version>0.1.13</cps:version>
     <cps:minimalcodecoverageinpercent>0</cps:minimalcodecoverageinpercent>
     <cps:dependentcodeunits>
     </cps:dependentcodeunits>
