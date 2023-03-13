@@ -1,0 +1,9 @@
+__.torrc.nickname.__
+__.torrc.orport.__
+__.torrc.exitrelay.__
+__.torrc.socksport.__
+__.torrc.controlsocket.__
+__.torrc.contactinfo.__
+__.torrc.relaybandwidthrate.__
+__.torrc.lognotice.__
+__.torrc.logdebug.__

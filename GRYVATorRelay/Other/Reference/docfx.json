@@ -7,16 +7,16 @@
           "**.md",
           "**.yml"
         ],
-        "src": "./ReferenceContent",
         "exclude": [
-          "Examples/**"
-        ]
+          "Examples/MinimalDockerComposeFile/**"
+        ],
+        "src": "./ReferenceContent"
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**"
+          "Images/**"
         ],
         "src": "./ReferenceContent"
       }

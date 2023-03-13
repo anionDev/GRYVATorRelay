@@ -1,35 +1,31 @@
 FROM debian:stable-slim
 
 ARG TargetEnvironmentType
-ARG Version="0.1.10"
+ARG Version="0.1.11"
+ARG TorKey=A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
+ARG TorURL=https://deb.torproject.org/torproject.org
+LABEL maintainer "marius.goecke@gmail.com"
+LABEL description="GRYVATorRelay is a docker-image for simply running a tor-relay in a docker-container."
+LABEL targetEnvironmentType="$TargetEnvironmentType"
+LABEL version="$Version"
 
-RUN mkdir /Workspace
-WORKDIR /Workspace
+RUN apt-get -y update \
+    && apt-get -y install wget gpg lsb-release \
+    && mkdir /Workspace \
+    && mkdir /Workspace/Application \
+    && mkdir /Workspace/Data \
+    && echo "deb $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
+    && echo "deb-src $TorURL $(lsb_release -cs) main" | tee -a /etc/apt/sources.list.d/tor.list \
+    && wget -qO- $TorURL/$TorKey.asc | gpg --import \
+    && gpg --export $TorKey | apt-key add - \
+    && apt-get -y update \
+    && apt-get -y install tor deb.torproject.org-keyring \
+    && apt-get -y purge wget gpg lsb-release \
+    && apt-get clean
 
-RUN apt-get -y update
-RUN apt-get install -y git
+WORKDIR /Workspace/Data
 
-RUN git clone --single-branch --branch main https://github.com/anionDev/ScriptCollection.git
+COPY ./GRYVATorRelay/torrc.template /Workspace/Application/torrc
+COPY ./GRYVATorRelay/EntryPoint.sh /Workspace/Application/EntryPoint.sh
 
-RUN chmod -R +x ./ScriptCollection/Other/OtherScripts
-
-RUN ./ScriptCollection/Other/OtherScripts/ServerMaintenance/Debian/Anonymous/TorInstall.sh
-
-RUN ./ScriptCollection/Other/OtherScripts/ServerMaintenance/Debian/Common/CreateUser.sh "user" "/Workspace/userhome" "false" "" "false" "false"
-
-COPY ./torrc.template /Workspace/userhome/torrc
-
-COPY ./EntryPointScript.sh /Workspace/userhome/EntryPointScript.sh
-RUN chmod +x /Workspace/userhome/EntryPointScript.sh
-
-RUN mkdir -p /Workspace/userhome
-RUN chown -R user:1000 /Workspace/userhome
-
-RUN ./ScriptCollection/Other/OtherScripts/ServerMaintenance/Debian/Common/ConfigureSystem.sh "$TargetEnvironmentType" "/Workspace/ScriptCollection" "" "/Workspace"
-
-RUN tor --version
-
-USER user
-WORKDIR /Workspace/userhome
-
-ENTRYPOINT ["/Workspace/userhome/EntryPointScript.sh"]
+ENTRYPOINT ["/Workspace/Application/EntryPoint.sh"]

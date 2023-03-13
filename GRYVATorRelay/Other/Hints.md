@@ -10,3 +10,7 @@ The following tools from the [tools-list](https://github.com/anionDev/ScriptColl
 - `gitversion`
 - `reportgenerator`
 - `scriptcollection`
+
+## IDE
+
+The recommended IDE for this codeunit is [Visual Studio Code](https://code.visualstudio.com/).
