@@ -15,12 +15,15 @@
 			{
 				"label": "Build all codeunits",
 				"command": "SCBuildCodeunits",
-				"args": [],
+				"args": [
+					"--buildenvironment",
+					"Development"
+				],
 				"type": "shell",
 				"options": {
 					"cwd": "${workspaceFolder}",
 				},
-			},
+			}
 			{
 				"label": "GRYVATorRelay: Run example",
 				"command": "python GRYVATorRelay/Other/Reference/ReferenceContent/Examples/MinimalDockerComposeFile/RunExample.py",

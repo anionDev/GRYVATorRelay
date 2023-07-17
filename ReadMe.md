@@ -19,4 +19,4 @@ This repository applies the [CommonProjectStructure](https://projects.aniondev.d
 
 ## License
 
-See [License.txt](https://projects.aniondev.de/PublicProjects/GRYVAImages/GRYVATorRelay/-/raw/main/License.txt) for license-information.
+See [License.txt](https://github.com/anionDev/GRYVATorRelay/blob/main/License.txt) for license-information.
