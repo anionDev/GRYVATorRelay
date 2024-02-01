@@ -3,7 +3,7 @@ version: '3.2'
 services:
 
   gryvatorrelay:
-    image: gryvatorrelay:0.1.19
+    image: gryvatorrelay:0.1.20
     container_name: 'gryvatorrelay'
     volumes:
       - "./Volumes/Data:/Workspace/Data"

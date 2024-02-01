@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 ARG TargetEnvironmentType
-ARG Version="0.1.19"
+ARG Version="0.1.20"
 ARG TorKey=A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 ARG TorURL=https://deb.torproject.org/torproject.org
 LABEL maintainer "marius.goecke@gmail.com"
