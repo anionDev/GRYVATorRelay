@@ -1,0 +1,11 @@
+@startuml CodeUnits-Overview
+title CodeUnits of GRYVATorRelay
+
+[GRYVATorRelay]
+note as GRYVATorRelayNote
+  GRYVATorRelay is a docker-image for running a tor-relay in a docker-container.
+end note
+GRYVATorRelay .. GRYVATorRelayNote
+
+
+@enduml

@@ -2,36 +2,22 @@
 	"folders": [
 		{
 			"path": ".",
-			"name": "Entire repository",
-		},
-		{
-			"path": "./GRYVATorRelay",
-			"name": "GRYVATorRelay"
+			"name": "Entire repository"
 		}
 	],
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "Build all codeunits",
-				"command": "SCBuildCodeunits",
-				"args": [
-					"--buildenvironment",
-					"Development"
-				],
+				"label": "Base: Build all codeunits",
+				"command": "scbuildcodeunits",
 				"type": "shell",
 				"options": {
-					"cwd": "${workspaceFolder}",
+					"cwd": "${workspaceFolder}"
 				},
-			}
-			{
-				"label": "GRYVATorRelay: Run example",
-				"command": "python GRYVATorRelay/Other/Reference/ReferenceContent/Examples/MinimalDockerComposeFile/RunExample.py",
-				"args": [],
-				"type": "shell",
-				"options": {
-					"cwd": "${workspaceFolder}",
-				},
+				"aliases": [
+					"bb"
+				]
 			}
 		]
 	},
@@ -40,7 +26,7 @@
 		"configurations": [
 			{
 				"name": "Debug current file",
-				"type": "python",
+				"type": "debugpy",
 				"request": "launch",
 				"program": "${file}",
 				"console": "integratedTerminal"
@@ -50,10 +36,10 @@
 	"settings": {
 		"spellright.documentTypes": [
 			"markdown",
-			"plaintext",
+			"plaintext"
 		],
 		"spellright.language": [
-			"en",
-		],
+			"en"
+		]
 	}
 }
