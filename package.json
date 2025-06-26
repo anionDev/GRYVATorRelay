@@ -1,0 +1,7 @@
+{
+  "name": "GRYVATorRelay",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "version": "0.1.24"
+}
